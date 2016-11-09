@@ -12,3 +12,12 @@ type CustomerID = Int
 type ReviewMessage = String
 type BookRecord = (BookInfo, BookReview)
 data BookReview = BookReview BookInfo CustomerID ReviewMessage
+
+type CardHolder = String
+type CreditNumber =  String
+type Address = [String]
+
+data BillingInfo = CreditCard CardHolder CreditNumber Address
+                | CashOnDelivery
+                | Invoice CustomerID
+                deriving (Show)
